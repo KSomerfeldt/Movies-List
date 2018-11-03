@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+<div class="ui main text segment container">
+     <div class="ui huge header"><%= movie.title %></div>
+    <div class="item">
+        <div class=image>
+             <img src= "<%= movie.image %>">
+        </div>
+        <div class="ui header"><%= movie.year %></div>
+           <div class="content">
+                <p><%= movie.description %></p>
+            </div>
+            <div>
+                <a href="/movies/<%=movie._id %>/edit" class="ui basic blue small button">Edit</a>
+                <form id="delete" action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+                    <button class="ui basic red small button">Delete</button>
+                </form>
+             </div>
+            <div class="meta">
+                <p>This post added <%= movie.created.toDateString()%>
+            </div>
+           
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

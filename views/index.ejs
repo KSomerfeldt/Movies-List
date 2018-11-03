@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui main text segment container">
+    <div class="ui huge header">The Movies</div>
+    <div class="top attached segment">
+        <div class="ui divided items">
+             <% movies.forEach(function(movie){ %>
+                <div class="item">
+                    <div class=image>
+                         <img src= "<%= movie.image %>">
+                    </div>
+                    <div class="content">
+                        <a class="ui huge header" href="/movies/<%= movie.id %>"><%= movie.title %></a>
+                        <p><%= movie.year %></p>
+                       <div class="extra">
+                            <a class="ui floated basic blue button" href="/movies/<%= movie.id %>">
+                            Synopsis
+                            </a>
+                        </div>
+                        <div class="meta">
+                            <p>This post added <%= movie.created.toDateString()%>
+                        </div>
+                   </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,11 @@
+.container.main {
+    margin-top: 7.0em;
+}
+
+body {
+    background: #4286f4;
+}
+
+#delete {
+    display: inline;
+}
